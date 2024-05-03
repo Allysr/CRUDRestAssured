@@ -2,6 +2,7 @@ package test;
 
 import factory.Usuario.UsuarioData;
 import io.restassured.RestAssured;
+import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -67,7 +68,7 @@ public class PutUserTest extends BaseTest {
     public void deveValidarStatus400AoAtualizarCPFExistente() {
         UsuarioData usuario = new UsuarioData();
 
-        Integer id = RestAssured
+        Response response = RestAssured
                 .given()
                 .contentType("application/json")
                 .body(usuario.novoUsuario())
@@ -75,13 +76,18 @@ public class PutUserTest extends BaseTest {
                 .then()
                 .statusCode(201)
                 .extract()
-                .path("id");
+                .response();
+
+        Integer id = response.path("id");
+        String cpf = response.path("cpf");
+
 
         RestAssured
                 .given()
                 .contentType("application/json")
-                .body(usuario.usuarioCPFExistente())
-                .when().put("/users/" + id)
+                .pathParam("id", id)
+                .body(usuario.usuarioCPFExistente(cpf))
+                .when().put("/users/{id}")
                 .then()
                 .statusCode(400)
                 .body("mensagem", equalTo("CPF já cadastrado"));

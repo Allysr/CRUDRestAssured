@@ -12,24 +12,37 @@ public class UsuarioData {
 
     public String novoUsuario (){
         GeradorCPF cpf = new GeradorCPF();
-        UsuarioFactory ana = new UsuarioFactory("Ana", "11/11/1970", cpf.gerarCPF());
-        return userJson(ana);
+        UsuarioFactory usuario = new UsuarioFactory();
+        usuario.setNome("Ana");
+        usuario.setDataNascimento("10/10/1975");
+        usuario.setCpf(cpf.gerarCPF());
+        return userJson(usuario);
     }
 
     public String usuarioVazio(){
-        UsuarioFactory ana = new UsuarioFactory("", "", "");
-        return userJson(ana);
+        UsuarioFactory usuario = new UsuarioFactory();
+        usuario.setNome("");
+        usuario.setDataNascimento("");
+        usuario.setCpf("");
+        return userJson(usuario);
     }
 
     public String usuarioCPFInvalido(){
-        UsuarioFactory ana = new UsuarioFactory("Ana", "11/11/1970", "0000000");
-        return userJson(ana);
+        UsuarioFactory usuario = new UsuarioFactory();
+        usuario.setNome("Ana");
+        usuario.setDataNascimento("10/10/1975");
+        usuario.setCpf("000");
+        return userJson(usuario);
     }
 
-    public String usuarioCPFExistente(){
-        UsuarioFactory cpfExistente = new UsuarioFactory("Ana", "11/11/1970", "149.408.830-43");
-        return userJson(cpfExistente);
+    public String usuarioCPFExistente(String cpf){
+        UsuarioFactory usuario = new UsuarioFactory();
+        usuario.setNome("Ana");
+        usuario.setDataNascimento("10/10/1975");
+        usuario.setCpf(cpf);
+        return userJson(usuario);
     }
 
 }
+
 

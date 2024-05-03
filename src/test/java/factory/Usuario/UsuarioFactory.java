@@ -6,14 +6,21 @@ public class UsuarioFactory {
     private String dataNascimento;
     private String cpf;
 
-    public UsuarioFactory(String nome, String dataNascimento, String cpf) {
+
+    public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
-        this.cpf = cpf;
     }
 
     public String getCpf() {
         return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }
 

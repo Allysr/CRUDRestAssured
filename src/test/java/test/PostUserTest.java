@@ -59,10 +59,20 @@ public class PostUserTest extends BaseTest {
     public void deveValidarStatus400AoEnviarCPFExistente() {
         UsuarioData usuario = new UsuarioData();
 
+        String cpf = RestAssured
+                .given()
+                .contentType("application/json")
+                .body(usuario.novoUsuario())
+                .when().post("/users")
+                .then()
+                .statusCode(201)
+                .extract()
+                .path("cpf");
+
         RestAssured
                 .given()
                 .contentType("application/json")
-                .body(usuario.usuarioCPFExistente())
+                .body(usuario.usuarioCPFExistente(cpf))
                 .when().post("/users")
                 .then()
                 .statusCode(400)
