@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import test.BaseTest;
-import utils.requests.GetUser.GetUsersRequest;
+import utils.requests.GetUsers.GetUsersRequest;
 
 import static org.hamcrest.Matchers.*;
 

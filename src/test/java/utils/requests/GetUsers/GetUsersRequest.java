@@ -1,4 +1,4 @@
-package utils.requests.GetUser;
+package utils.requests.GetUsers;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
