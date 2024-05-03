@@ -1,10 +1,9 @@
-package test;
+package test.PostUser;
 
-import factory.Usuario.UsuarioData;
-import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import test.BaseTest;
 import utils.requests.PostUser.PostUserRequest;
 
 import static org.hamcrest.Matchers.equalTo;
