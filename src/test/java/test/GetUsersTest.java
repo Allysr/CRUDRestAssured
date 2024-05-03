@@ -1,18 +1,12 @@
-package testes;
+package test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.hamcrest.Matchers.*;
 
 public class GetUsersTest extends BaseTest {
-
-    @BeforeEach
-    public void rotaAPI () {
-        pegarRota();
-    }
 
     @Test
     @DisplayName("Deve validar lista de usuários com status code 200")
@@ -38,4 +32,5 @@ public class GetUsersTest extends BaseTest {
                 .contentType(ContentType.JSON);
     }
 
-}
+
+    }

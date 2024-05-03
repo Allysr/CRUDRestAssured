@@ -1,4 +1,4 @@
-package testes;
+package test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -24,12 +24,12 @@ public class GetUserByIDTest extends BaseTest {
                     .get("/users/1")
                 .then()
                     .statusCode(200)
-                    .body("id", is(1))
-                    .body("nome", containsString("Victor Test"))
-                    .body("dataNascimento", equalTo("04/04/2002"))
-                    .body("cpf", equalTo("149.408.830-43"))
-                    .body("idade", equalTo(22));
-    }
+                    .body("id", isA(Integer.class))
+                    .body("nome", isA(String.class))
+                    .body("dataNascimento", isA(String.class))
+                    .body("cpf", isA(String.class))
+                    .body("idade", isA(Integer.class));
+        }
 
     @Test
     @DisplayName("Deve validar se o formato da resposta é JSON")

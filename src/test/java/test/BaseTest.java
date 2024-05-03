@@ -1,10 +1,11 @@
-package testes;
+package test;
 
 import io.restassured.RestAssured;
+import org.junit.jupiter.api.BeforeEach;
 
 public class BaseTest  {
-
-    public static void pegarRota() {
+    @BeforeEach
+    public void pegarRota() {
         RestAssured.baseURI = "https://teste-deploy-d69a89680fb9.herokuapp.com/api";
     }
 }
