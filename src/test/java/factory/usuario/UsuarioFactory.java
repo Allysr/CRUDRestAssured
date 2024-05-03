@@ -1,4 +1,4 @@
-package factory.Usuario;
+package factory.usuario;
 
 
 public class UsuarioFactory {

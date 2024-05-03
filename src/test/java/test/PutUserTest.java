@@ -1,6 +1,6 @@
 package test;
 
-import factory.Usuario.UsuarioData;
+import factory.usuario.UsuarioData;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;

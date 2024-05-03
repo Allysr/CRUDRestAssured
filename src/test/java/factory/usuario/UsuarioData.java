@@ -1,4 +1,4 @@
-package factory.Usuario;
+package factory.usuario;
 
 import com.google.gson.Gson;
 import utils.GeradorCPF;

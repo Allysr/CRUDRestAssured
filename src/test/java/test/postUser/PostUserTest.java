@@ -1,10 +1,10 @@
-package test.PostUser;
+package test.postUser;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import test.BaseTest;
-import utils.requests.PostUser.PostUserRequest;
+import utils.requests.postUser.PostUserRequest;
 
 import static org.hamcrest.Matchers.equalTo;
 

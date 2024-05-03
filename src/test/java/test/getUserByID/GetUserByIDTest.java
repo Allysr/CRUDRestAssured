@@ -1,11 +1,11 @@
-package test.GetUserByID;
+package test.getUserByID;
 
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import test.BaseTest;
-import utils.requests.GetUserByID.GetUserByIDRequest;
+import utils.requests.getUserByID.GetUserByIDRequest;
 
 import static org.hamcrest.Matchers.*;
 

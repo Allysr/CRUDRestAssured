@@ -1,6 +1,6 @@
-package utils.requests.PostUser;
+package utils.requests.postUser;
 
-import factory.Usuario.UsuarioData;
+import factory.usuario.UsuarioData;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import utils.ObterDadosUsuario;

@@ -1,11 +1,11 @@
-package test.GetUsers;
+package test.getUsers;
 
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import test.BaseTest;
-import utils.requests.GetUsers.GetUsersRequest;
+import utils.requests.getUsers.GetUsersRequest;
 
 import static org.hamcrest.Matchers.*;
 
