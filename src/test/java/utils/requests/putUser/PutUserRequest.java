@@ -5,6 +5,8 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import utils.ObterDadosUsuario;
 
+import static utils.Endpoints.USERBYID;
+
 public class PutUserRequest {
 
     public Response atualizarUsuarioPorID(){
@@ -15,8 +17,9 @@ public class PutUserRequest {
         return RestAssured
                 .given()
                 .contentType("application/json")
+                .pathParam("id", id)
                 .body(usuario.novoUsuario())
-                .when().put("/users/" + id);
+                .when().put(USERBYID + "{id}");
     }
 
     public Response atualizarUsuarioPorCPFInvalido(){
@@ -27,8 +30,9 @@ public class PutUserRequest {
         return RestAssured
                 .given()
                 .contentType("application/json")
+                .pathParam("id", id)
                 .body(usuario.usuarioCPFInvalido())
-                .when().put("/users/" + id);
+                .when().put(USERBYID + "{id}");
     }
 
     public Response atualizarUsuarioPorCPFExistente(){
@@ -43,17 +47,19 @@ public class PutUserRequest {
                 .contentType("application/json")
                 .pathParam("id", id)
                 .body(usuario.usuarioCPFExistente(cpf))
-                .when().put("/users/{id}");
+                .when().put(USERBYID + "{id}");
     }
 
     public Response atualizarUsuarioInexistente(){
         UsuarioData usuario = new UsuarioData();
+        Integer id = 7000;
 
         return  RestAssured
                 .given()
                 .contentType("application/json")
+                .pathParam("id", id)
                 .body(usuario.novoUsuario())
-                .when().put("/users/7000");
+                .when().put(USERBYID + "{id}");
     }
 
 

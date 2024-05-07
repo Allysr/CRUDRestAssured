@@ -5,6 +5,8 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import utils.ObterDadosUsuario;
 
+import static utils.Endpoints.USERS;
+
 public class PostUserRequest {
 
     public Response criarUsuarioRequest(){
@@ -14,7 +16,7 @@ public class PostUserRequest {
                 .given()
                 .contentType("application/json")
                 .body(usuario.novoUsuario())
-                .when().post("/users");
+                .when().post(USERS);
     }
 
     public Response criarUsuarioDadosVaziosRequest(){
@@ -24,7 +26,7 @@ public class PostUserRequest {
                 .given()
                 .contentType("application/json")
                 .body(usuario.usuarioVazio())
-                .when().post("/users");
+                .when().post(USERS);
     }
 
     public Response criarUsuarioCPFInvalidoRequest(){
@@ -34,7 +36,7 @@ public class PostUserRequest {
                 .given()
                 .contentType("application/json")
                 .body(usuario.usuarioCPFInvalido())
-                .when().post("/users");
+                .when().post(USERS);
     }
 
     public Response criarUsuarioCPFExistenteRequest(){
@@ -46,7 +48,7 @@ public class PostUserRequest {
                 .given()
                 .contentType("application/json")
                 .body(usuario.usuarioCPFExistente(cpf))
-                .when().post("/users");
+                .when().post(USERS);
     }
 
 }

@@ -4,6 +4,8 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import utils.ObterDadosUsuario;
 
+import static utils.Endpoints.USERBYID;
+
 public class GetUserByIDRequest {
 
     public Response obterUsuarioPorID(){
@@ -14,7 +16,7 @@ public class GetUserByIDRequest {
                 .given()
                 .pathParam("id", id)
                 .when()
-                .get("/users/{id}");
+                .get(USERBYID + "{id}");
     }
 
     public Response obterUsuarioPorIDInvalido(){
@@ -23,6 +25,6 @@ public class GetUserByIDRequest {
                 .given()
                 .pathParam("id", id)
                 .when()
-                .get("/users/{id}");
+                .get(USERBYID + "{id}");
     }
 }

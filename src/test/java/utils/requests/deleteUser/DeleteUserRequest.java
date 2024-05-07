@@ -4,6 +4,8 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import utils.ObterDadosUsuario;
 
+import static utils.Endpoints.USERBYID;
+
 public class DeleteUserRequest {
 
     public Response deletarUsuarioPorID () {
@@ -14,7 +16,7 @@ public class DeleteUserRequest {
                 .given()
                 .pathParam("id", id)
                 .when()
-                .delete("/users/{id}");
+                .delete(USERBYID + "{id}");
     }
 
     public Response deletarUsuarioPorIDInvalido () {
@@ -24,6 +26,6 @@ public class DeleteUserRequest {
                 .given()
                 .pathParam("id", id)
                 .when()
-                .delete("/users/{id}");
+                .delete(USERBYID + "{id}");
     }
 }
